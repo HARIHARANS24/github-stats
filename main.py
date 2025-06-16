@@ -1,11 +1,23 @@
 import os
 import requests
 
-token = os.getenv("ACCESS_TOKEN")
-headers = {"Authorization": f"token {token}"}
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
+USERNAME = "HARIHARANS24"  # Replace with your GitHub username
 
-user = "HARIHARANS24"  # Replace with your username
-r = requests.get(f"https://api.github.com/users/{user}", headers=headers)
+headers = {
+    "Authorization": f"token {ACCESS_TOKEN}",
+    "Accept": "application/vnd.github.v3+json"
+}
 
+# Fetch user profile data
+response = requests.get(f"https://api.github.com/users/{USERNAME}", headers=headers)
+data = response.json()
+
+# ✅ Create the directory if it doesn't exist
+os.makedirs("generated", exist_ok=True)
+
+# Save data to a file
 with open("generated/overview.txt", "w") as f:
-    f.write(str(r.json()))
+    f.write(str(data))
+
+print("GitHub user data saved to generated/overview.txt")
