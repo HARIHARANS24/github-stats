@@ -2,7 +2,7 @@ name: Generate Stats Images
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   schedule:
     - cron: "5 0 * * *"
   workflow_dispatch:
@@ -15,10 +15,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Check out repository under $GITHUB_WORKSPACE, so the job can access it
+    # Check out repository under $GITHUB_WORKSPACE
     - uses: actions/checkout@v3
 
-    # Run using Python 3.8 for consistency and aiohttp
+    # Run using Python 3.8
     - name: Set up Python 3.8
       uses: actions/setup-python@v4
       with:
@@ -26,7 +26,7 @@ jobs:
         architecture: 'x64'
         cache: 'pip'
 
-    # Install dependencies with `pip`
+    # Install dependencies
     - name: Install requirements
       run: |
         python3 -m pip install --upgrade pip setuptools wheel
@@ -44,12 +44,12 @@ jobs:
         EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
         EXCLUDE_FORKED_REPOS: true
 
-    # Commit all changed files to the repository
+    # Commit and push changes
     - name: Commit to the repo
       run: |
         git config --global user.name "HARIHARANS24/github-stats"
         git config --global user.email "github-stats[bot]@HARIHARANS24.github.io"
+        git pull --rebase origin main
         git add .
-        # Force the build to succeed, even if no files were changed
         git commit -m 'Update generated files' || true
         git push
