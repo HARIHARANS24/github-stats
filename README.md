@@ -153,17 +153,4 @@ releasing work publicly on the Web.
   [anuraghazra/github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
 - Makes use of [GitHub Octicons](https://primer.style/octicons/) to precisely
   match the GitHub UI
-
-
-
-
 ---
-
-
-## 📚 Top Languages
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=HARIHARANS24&layout=compact&theme=github_dark)
-
-## 🛠 GitHub Stats
-
-![HARIHARANS24's GitHub stats](https://github-readme-stats.vercel.app/api?username=HARIHARANS24&show_icons=true&theme=github_dark)
