@@ -45,11 +45,11 @@ jobs:
         EXCLUDE_FORKED_REPOS: true
 
     # Commit and push changes
-    - name: Commit to the repo
+    - name: Commit and push changes
       run: |
         git config --global user.name "HARIHARANS24/github-stats"
         git config --global user.email "github-stats[bot]@HARIHARANS24.github.io"
-        git pull --rebase origin main
         git add .
         git commit -m 'Update generated files' || true
+        git pull --rebase origin main
         git push
