@@ -15,7 +15,7 @@ repositories you have contributed to, but do not own.
 
 Generated images automatically switch between GitHub light theme and GitHub
 dark theme.
-
+ 
 ## Background
 
 When someone views a profile on GitHub, it is often because they are curious
