@@ -55,7 +55,7 @@ last contributed to more than a year ago may not be included in the statistics
 due to limitations in the results returned by the API.
 
 For more information on inaccuracies, see issue
-[#2](https://github.com/HARIHARANS24/github-stats/issues/2),
+[#2](https://github.com/HARIHARANS24/github-stats/issues/2), 
 [#3](https://github.com/HARIHARANS24/github-stats/issues/3), and
 [#13](https://github.com/HARIHARANS24/github-stats/issues/13).
 
